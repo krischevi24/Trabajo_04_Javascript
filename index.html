@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>
+            Programación para internet
+        </title>
+        <script src="js/phaser.js"></script>
+
+        <style type="text/css">
+        body{
+            margin: 0;
+        }
+        </style>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            var config = {
+                type: Phaser.AUTO,
+                width:800,
+                heigth:600,
+                scene: {
+                    preload: preload,
+                    create: create,
+                    update: update
+                }
+            };
+               
+            var game = new Phaser.Game(config);
+
+            function preload ()
+            {
+                this.load.image("background", 'assets/background.png');
+                this.load.image("platform", 'assets/platform.png');
+                this.load.image("pez", 'assets/pez.png');
+                this.load.spritesheet('ave', 'assets/ave.png', {frameWidth: 32, frameHeight: 48});
+            }
+            function create ()
+            {
+                this.add.image(50,0,'background').setScale(6);
+                platforms = this.physics.add.staticGroup();
+
+                platforms.create(400, 568, 'platform').setScale(2);
+            }
+            function update ()
+            {
+                
+            }
+
+        </script>
+
+    </body>
+
+</html>
